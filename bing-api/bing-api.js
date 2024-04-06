@@ -9,5 +9,5 @@ function getBing() {
             console.error('Error fetching or parsing the bing-api:', error);
         });
 }
-
+styleInfo("Welcome to", "bing-api", "#d97c7c", "#fff");
 getBing()
