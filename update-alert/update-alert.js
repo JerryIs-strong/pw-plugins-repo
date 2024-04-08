@@ -27,7 +27,7 @@ fetch('https://raw.githubusercontent.com/JerryIs-strong/personal-webpage/main/ve
         }
 
         if (compareVersions(localVersion, cloudlArrs)) {
-            styleInfo("New version available:", cloudlArrs, "#b1a968", "#FFF")
+            styleInfo("New version available", cloudlArrs, "#b1a968", "#FFF")
         }
     })
     .catch(error => {
