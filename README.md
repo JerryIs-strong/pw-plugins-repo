@@ -4,7 +4,7 @@
   - [secret](/secret)
 - ### 已整合
   - [update-alert](/update-alert)
-    - [patch](/update-alert/patch)
+    - [patch: 20240423](/update-alert/patch)
 
 ## By community
 - none~
