@@ -30,7 +30,6 @@ function config() {
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
         fixed: true,
-        mini: true,
         storageName: 'aplayer-for-arona',
         audio: [{
             name: music.name,
@@ -39,14 +38,18 @@ function config() {
             cover: `/src/music/${music.name}/cover.png`,
         }]
     });
+
+    ap.on('loadeddata', function () {
+        showSnackbar("aplayer-arona 加載完成!", false, 6000);
+    });
+
+    ap.on('error', function () {
+        showSnackbar("aplayer-arona 發生錯誤!", false, 6000, "#d55757", "fa-solid", "fa-bomb");
+    });
 }
+
+
 
 addDepend();
 addElement();
-try {
-    setTimeout(config, 1000);
-    showSnackbar("aplayer-arona 加載完成!", false, 6000);
-} catch (error) {
-    console.error(debug(error, "error"));
-}
-
+setTimeout(config, 1000);
