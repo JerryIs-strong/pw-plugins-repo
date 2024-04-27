@@ -5,7 +5,6 @@
     -webkit-backdrop-filter: blur(20px);
     color: var(--font-color);
     border-top: 1px solid var(--background-color) !important;
-    padding: 10px 18px 10px 10px !important;
     animation: fade-in 0.6s ease-in-out forwards;
 }
 
@@ -13,8 +12,12 @@
     background-color: var(--background-color);
 }
 
-.aplayer.aplayer-fixed .aplayer-body{
+.aplayer.aplayer-narrow .aplayer-body{
     padding: 10px 30px 10px 10px !important;
+}
+
+.aplayer.aplayer-fixed .aplayer-body{
+    padding: 10px 15px 10px 10px;
     box-sizing: content-box;
 }
 
@@ -24,6 +27,10 @@
 
 .aplayer-pic{
     border-radius: 10px;
+}
+
+.aplayer-icon-lrc, .aplayer-icon-loop{
+    display: none !important;
 }
 
 .aplayer.aplayer-fixed .aplayer-info {
