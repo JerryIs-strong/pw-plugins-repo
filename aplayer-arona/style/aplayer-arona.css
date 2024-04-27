@@ -12,27 +12,6 @@
     background-color: var(--background-color);
 }
 
-.aplayer.aplayer-narrow .aplayer-body{
-    padding: 10px 30px 10px 10px !important;
-}
-
-.aplayer.aplayer-fixed .aplayer-body{
-    padding: 10px 15px 10px 10px;
-    box-sizing: content-box;
-}
-
-.aplayer-fixed .aplayer-body{
-    box-sizing: border-box;
-}
-
-.aplayer-pic{
-    border-radius: 10px;
-}
-
-.aplayer-icon-lrc, .aplayer-icon-loop{
-    display: none !important;
-}
-
 .aplayer.aplayer-fixed .aplayer-info {
     border-top: none !important;
 }
@@ -50,7 +29,7 @@
 }
 
 .aplayer.aplayer-narrow .aplayer-body{
-    left: -88px;
+    left: -66px;
 }
 
 .aplayer-body:hover{
