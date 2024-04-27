@@ -1,46 +1,55 @@
-.aplayer-body{
-    opacity: 0;
-    background-color: var(--background-color) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    color: var(--font-color);
-    border-top: 1px solid var(--background-color) !important;
-    animation: fade-in 0.6s ease-in-out forwards;
+styleInfo("Welcome to", "aplayer for Arona", "#517e81", "#fff");
+
+function addElement() {
+    var PluginWrapper = document.createElement("div");
+    PluginWrapper.id = "PlayerAronaWrapper";
+    var PlayerWrapper = document.createElement("div");
+    PlayerWrapper.id = "aplayer";
+    document.getElementById("plugin-wrapper").appendChild(PluginWrapper);
+    document.getElementById("PlayerAronaWrapper").appendChild(PlayerWrapper);
 }
 
-.aplayer.aplayer-fixed .aplayer-miniswitcher {
-    background-color: var(--background-color);
+function addDepend() {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js';
+    document.body.appendChild(script);
+
+    const style = document.createElement('link');
+    style.rel = 'stylesheet';
+    style.href = 'https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css';
+
+    const styleLocal = document.createElement('link');
+    styleLocal.rel = 'stylesheet';
+    styleLocal.href = './src/plugins/style/aplayer-arona.css';
+    document.head.appendChild(style);
+    document.head.appendChild(styleLocal);
 }
 
-.aplayer.aplayer-fixed .aplayer-info {
-    border-top: none !important;
+function config() {
+    const music = JSON.parse(sessionStorage.getItem("current-music"));
+    const ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        storageName: 'aplayer-for-arona',
+        audio: [{
+            name: music.name,
+            artist: music.artist,
+            url: `/src/music/${music.name}/track.mp3`,
+            cover: `/src/music/${music.name}/cover.png`,
+        }]
+    });
+
+    ap.on('loadeddata', function () {
+        showSnackbar("aplayer-arona 加載完成!", false, 6000);
+    });
+
+    ap.on('error', function () {
+        showSnackbar("aplayer-arona 發生錯誤!", false, 6000, "#d55757", "fa-solid", "fa-bomb");
+    });
 }
 
-.aplayer .aplayer-info .aplayer-music .aplayer-author {
-    color: var(--font-secondary-color) !important;
-}
 
-.aplayer .aplayer-miniswitcher .aplayer-icon path {
-    fill: var(--font-secondary-color) !important;
-}
 
-.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-    fill: var(--font-secondary-color) !important;
-}
-
-.aplayer.aplayer-narrow .aplayer-body{
-    left: -66px;
-}
-
-.aplayer-body:hover{
-    left: 0px !important;
-}
-
-@keyframes fade-in {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
+addDepend();
+addElement();
+setTimeout(config, 1000);
