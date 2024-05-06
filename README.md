@@ -8,5 +8,5 @@
     - [patch: 20240423](/update-alert/patch)
 
 ## By community
-- ### 生效
+- ### 已校驗
   - [secret](/secret)
