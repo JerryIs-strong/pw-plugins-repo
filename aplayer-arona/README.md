@@ -1,8 +1,11 @@
-<a href="https://github.com/DIYgod/APlayer">
-  <img src="https://img.shields.io/badge/based_on-aplayer-blue"/>
-</a>
-<br/>
-<br/>
+> [!IMPORTANT]  
+> 請下載該模組的同時將```aplayer-arona.css```樣式文件放置於```/src/plugins/style/```下
+<div>
+  
+  <a href="https://github.com/DIYgod/APlayer">![](https://img.shields.io/badge/based_on-aplayer-blue)</a>
+  <a href="">![](https://img.shields.io/badge/version-1.2-blue)</a>
+
+</div>
 
 💙 由官方開發的功能插件，主要功能:
 - 提供H5音樂媒體播放器
